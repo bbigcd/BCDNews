@@ -7,7 +7,7 @@
 //
 
 #import "BCDTabBarController.h"
-#import "BCDNavigationController.h"
+#import "BCDRedBGNaviViewController.h"
 #import "BCDNewsViewController.h"
 #import "BCDReaderViewController.h"
 #import "BCDMediaViewController.h"
@@ -26,12 +26,12 @@
     // 后面带有UI_APPEARANCE_SELECTOR的方法，都可以通过appearance对象来统一设置
     NSMutableDictionary *attribute = [NSMutableDictionary dictionary];
     attribute[NSFontAttributeName] = [UIFont systemFontOfSize:12];
-    //NSForegroundColorAttributeName 相对于 NSBackgroundColorAttributeName
-    attribute[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
+    // NSForegroundColorAttributeName 相对于 NSBackgroundColorAttributeName
+    attribute[NSForegroundColorAttributeName] = [UIColor grayColor];
     
     NSMutableDictionary *selectedAttribute = [NSMutableDictionary dictionary];
     selectedAttribute[NSFontAttributeName] = [UIFont systemFontOfSize:12];
-    selectedAttribute[NSForegroundColorAttributeName] = [UIColor grayColor];
+    selectedAttribute[NSForegroundColorAttributeName] = [UIColor bottomTabBarTitleSeletedColor];
     
     UITabBarItem *item = [UITabBarItem appearance];
     [item setTitleTextAttributes:attribute forState:UIControlStateNormal];
@@ -54,13 +54,13 @@
 - (void)setupChildVC:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage
 {
     /** 设置文字和图片 */
-    vc.navigationItem.title = title;
+//    vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:image];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImage];
     
     /** 包装一个导航控制器，添加导航控制器为tabbarcontroller的自控制器 */
-    BCDNavigationController *navi = [[BCDNavigationController alloc] initWithRootViewController:vc];
+    BCDRedBGNaviViewController *navi = [[BCDRedBGNaviViewController alloc] initWithRootViewController:vc];
     [self addChildViewController:navi];
 }
 

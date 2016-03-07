@@ -1,0 +1,41 @@
+//
+//  PrefixHeader.pch
+//  BCDNews
+//
+//  Created by bigcd on 16/3/7.
+//  Copyright © 2016年 bbigcd. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "UIColor+BCDExtension.h" // 自定义颜色分类
+#import "UIView+BCDExtension.h"  // 对UIView的frame重写的分类，优化
+//#import <AFNetworking.h>    //Github排名第一的第三方网络请求类库，封装了系统的NSURLSession+NSOperation
+//#import <Masonry.h>
+
+
+
+
+#define CDNoteCenter [NSNotificationCenter defaultCenter]
+
+#ifdef DEBUG
+#define BCDLog(...) NSLog(__VA_ARGS__)
+#else
+#define BCDLog(...)
+#endif
+
+#define BCDLogFunc CDLog(@"%s", __func__)
+
+#define BCDRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define BCDGlobalBg CDRGBColor(223, 223, 223)
+
+#define BCDTagBg CDRGBColor(74, 139, 209)
+#define BCDTagFont [UIFont systemFontOfSize:14]
+
+#define BCDScreenW [UIScreen mainScreen].bounds.size.width
+#define BCDScreenH [UIScreen mainScreen].bounds.size.height
+
+#endif /* PrefixHeader_pch */
