@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BCDTabBarController.h"
+#import "LPLaunchManager.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setupAdvert];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
@@ -26,6 +28,13 @@
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+- (void)setupAdvert
+{
+    NSString *URLString = @"http://ydsj.didaaa.com/api/v1/advert/list";
+    [[LPLaunchManager shareInstance] setDuration:5.0];
+    [LPLaunchManager showAdvertWithURL:URLString disappearHandler:nil];
+    [LPLaunchManager showSkipButton:nil completed:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

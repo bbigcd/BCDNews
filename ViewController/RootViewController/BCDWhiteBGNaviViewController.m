@@ -22,14 +22,14 @@
     // 当导航栏用在CDNavigationController中, appearance设置才会生效
     //    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
     UINavigationBar *bar = [UINavigationBar appearance];
-    [bar setBackgroundImage:[UIImage imageNamed:back] forBarMetrics:UIBarMetricsDefault];
+    bar.backgroundColor = [UIColor whiteColor];
 }
 /**
  *  当前控制器“状态栏”对应的颜色
  */
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

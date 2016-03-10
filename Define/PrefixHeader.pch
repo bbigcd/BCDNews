@@ -12,13 +12,14 @@
 
 #import "UIColor+BCDExtension.h" // 自定义颜色分类
 #import "UIView+BCDExtension.h"  // 对UIView的frame重写的分类，优化
+#import "UIBarButtonItem+BCDExtension.h"
 //#import <AFNetworking.h>    //Github排名第一的第三方网络请求类库，封装了系统的NSURLSession+NSOperation
 //#import <Masonry.h>
 
 
 
 
-#define CDNoteCenter [NSNotificationCenter defaultCenter]
+#define BCDNoteCenter [NSNotificationCenter defaultCenter]
 
 #ifdef DEBUG
 #define BCDLog(...) NSLog(__VA_ARGS__)

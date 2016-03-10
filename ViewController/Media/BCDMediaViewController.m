@@ -16,14 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // 配置导航栏
+    [self setupNavigation];
 }
 /**
- *  配置导航栏
+ * 设置导航栏   -----------------------------------
  */
 - (void)setupNavigation
 {
-    
+ 
 }
-
 @end
