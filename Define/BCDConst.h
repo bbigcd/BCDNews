@@ -1,13 +1,15 @@
-//
-//  BCDConst.h
-//  BCDNews
-//
-//  Created by bigcd on 16/3/7.
-//  Copyright © 2016年 bbigcd. All rights reserved.
-//
+#import <UIKit/UIKit.h>
 
-#ifndef BCDConst_h
-#define BCDConst_h
+typedef enum {
+    BCDNewsTypeHeadline,
+    BCDNewsTypeRecreation,
+    BCDNewsTypeHottopic,
+    BCDNewsTypeSports,
+    BCDNewsTypeLocation,
+} BCDNewsType;
 
 
-#endif /* BCDConst_h */
+/** 新闻-顶部标题的高度 */
+UIKIT_EXTERN CGFloat const BCDTitilesViewH;
+/** 新闻-顶部标题的Y */
+UIKIT_EXTERN CGFloat const BCDTitilesViewY;
