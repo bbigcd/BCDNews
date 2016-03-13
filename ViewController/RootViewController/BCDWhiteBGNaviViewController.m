@@ -44,7 +44,7 @@
         [button setImage:[UIImage imageNamed:@"top_navigation_back_highlighted"] forState:UIControlStateSelected];
         button.size = CGSizeMake(45, 44);
         // 让按钮的内容往左边偏移10
-        //        button.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0);
+        button.contentEdgeInsets = UIEdgeInsetsMake(0, -24, 0, 0);
         [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         
         // 修改导航栏左边的item
